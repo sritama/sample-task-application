@@ -34,7 +34,7 @@ func (s *Service) CreateTask() http.HandlerFunc {
 
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
-			http.Error(w, "error converting create response to JSON", http.StatusBadRequest)
+			http.Error(w, "error converting create response to JSON", http.StatusInternalServerError)
 			return
 		}
 
